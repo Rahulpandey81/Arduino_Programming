@@ -1,9 +1,18 @@
+int val;
+int RelayPin = 13;
 void setup() {
-  // put your setup code here, to run once:
+  pinMode(RelayPin,OUTPUT);
+  Serial.begin(9600);
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+val=Serial.read();
+  if(val=='1'){
+    digitalWrite(RelayPin,HIGH);
+  }
+  else if (val=='0'){
+    digitalWrite(RelayPin,LOW);
+  }
 
 }
